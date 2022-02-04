@@ -1,0 +1,23 @@
+{
+    "require": {
+        "slim/slim": "^4.9",
+        "slim/psr7": "^1.5",
+        "illuminate/database": "^8.73"
+    },
+    "name": "vero/xbank",
+    "autoload": {
+        "psr-4": {
+            "Vero\\Xbank\\": "srcdir/",
+            "Controllers\\": "src/controllers/",
+            "Models\\": "src/models/",
+            "Middlewares\\": "src/middlewares/",
+            "Actions\\": "src/actions/"
+        }
+    },
+    "authors": [
+        {
+            "name": "verotomi",
+            "email": "verovszki.tamas@gmail.com"
+        }
+    ]
+}
