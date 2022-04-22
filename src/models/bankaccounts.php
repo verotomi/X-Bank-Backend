@@ -1,17 +1,13 @@
 <?php
-    namespace Models;
 
-    use Illuminate\Database\Eloquent\Model;
+namespace Models;
 
-    class BankAccounts extends Model {
-        protected $table = "bank_accounts";
-        public $timestamps = false;
-        protected $fillable = ['id', 'id_user', 'number', 'type', 'currency', 'balance', 'status', 'created_on'];
-        protected $guarded = ['id'];
+use Illuminate\Database\Eloquent\Model;
 
-        /*public function user(){
-            //return $this->hasOne('Vero\Xbank\Models\users');
-            //return $this->hasOne(Users::class, 'id_user');
-            return $this->belongsTo(Users::class, 'id_user');
-        }*/
-    }
+class BankAccounts extends Model
+{
+  protected $table = "bank_accounts";
+  public $timestamps = false;
+  protected $fillable = ['id', 'id_user', 'number', 'type', 'currency', 'balance', 'status', 'created_on'];
+  protected $guarded = ['id'];
+}

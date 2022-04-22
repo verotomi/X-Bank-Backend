@@ -14,7 +14,6 @@ Options -Indexes
 		RewriteEngine On
 		RewriteCond %{REQUEST_FILENAME} !-f
 		RewriteCond %{REQUEST_FILENAME} !-d
-		#RewriteBase /WL15/Backend		
 		RewriteRule ^ index.php [QSA,L]
 		RewriteRule .* - [env=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 	</ifModule>

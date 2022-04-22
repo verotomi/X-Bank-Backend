@@ -4,7 +4,10 @@ namespace Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Token extends Model{
-    //ha created_at / updated_at nélkül hoztuk létre:
-    public $timestamps = false;
+class Token extends Model
+{
+  public $timestamps = true;
+  protected $table = "tokens";
+  protected $fillable = ['updated_at', 'token'];
+  protected $guarded = ['id'];
 }
