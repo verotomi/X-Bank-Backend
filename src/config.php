@@ -1,6 +1,6 @@
 <?php
 
-define('VERSION_NUMBER', '1.2.4');
+define('VERSION_NUMBER', '1.2.5');
 
 /**
  * Adatok a helyi adatbázis használatához
@@ -42,4 +42,4 @@ return [
   'DB_CHARSET' => 'utf8mb4',
   'DB_COLLATION' => 'utf8mb4_unicode_ci',
   'DB_PREFIX' => ''
-  ];
+];

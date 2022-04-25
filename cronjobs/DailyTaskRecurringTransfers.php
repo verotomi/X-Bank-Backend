@@ -9,7 +9,8 @@ function handleRecurringTransfers()
   $dt = new DateTime("now", new DateTimeZone('Europe/Budapest'));
   $current_time = $dt->format('Y/m/d H:i:s');
   global $config;
-  $conn = mysqli_connect($config["DB_HOST"], $config["DB_USER"], $config["DB_PASS"], $config["DB_DATABASE"]);  if (!$conn) {
+  $conn = mysqli_connect($config["DB_HOST"], $config["DB_USER"], $config["DB_PASS"], $config["DB_DATABASE"]);
+  if (!$conn) {
     exit("Kapcsoldási hiba: " . mysqli_connect_error());
   }
   $sql = "SELECT id, id_user, id_bank_account_number, name, type, direction, reference_number, currency, amount, partner_name, partner_account_number, comment, arrived_on, status, last_fulfilled, frequency, days 

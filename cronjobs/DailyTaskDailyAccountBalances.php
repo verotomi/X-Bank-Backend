@@ -2,7 +2,7 @@
 $config = require '../src/config.php';
 
 /**
- * Bankszámlák egyenlegeinek a frissítését végzi
+ * A bankszámlák egyenlegeinek a frissítését végzi
  */
 function updateBalances()
 {

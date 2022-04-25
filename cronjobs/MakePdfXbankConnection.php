@@ -6,8 +6,8 @@ class dbObj
   var $conn;
 
   /**
-  *  A bankszámlakivonatok készítésénél használt osztályban az adatbázishoz való kapcsolódást végzi
-  */
+   *  A bankszámlakivonatok készítésénél használt osztályban az adatbázishoz való kapcsolódást végzi
+   */
   function getConnstring()
   {
     global $config;

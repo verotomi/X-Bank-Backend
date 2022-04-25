@@ -2,9 +2,10 @@
 $config = require '../src/config.php';
 
 /**
- * @param array   $st_num       az aktuális árfolyam-érték
- * @param array   $end_num      az aktuális árfolyam-érték
- * @param array   $mul          az aktuális árfolyam-érték
+ * Véletlenszám generálását végzi
+ * @param float   $st_num       alsó határ
+ * @param float   $end_num      felső határ
+ * @param int     $mul          szorzó
  */
 function rand_float($st_num = 0, $end_num = 1, $mul = 100000)
 {
@@ -13,7 +14,7 @@ function rand_float($st_num = 0, $end_num = 1, $mul = 100000)
 }
 
 /**
- * Új árfolyamok generálása véletlenszámok használatával
+ * Új árfolyamok generálását végzi véletlenszámok használatával
  * @param float $currentrate az aktuális árfolyam-érték
  */
 function generate_new_rates($currentrate)
@@ -42,7 +43,7 @@ function getCurrentCurrencyRates($table_name)
 /**
  * A valuta-és devizaárfolyamok frissítését végzi
  * @param int     $percentage       az eladási- és a vételi árfolyam közötti különbség értéke
- * @param array   $table_name       a valuták illetve devizák táblaneve
+ * @param string  $table_name       a valuták illetve devizák táblaneve
  * @param array   $mysqli_result    a jelenlegi árfolyamok
  */
 function updateCurrentCurrencyRatesWithRandomValues($table_name, $result, $percentage)

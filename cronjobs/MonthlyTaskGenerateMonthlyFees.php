@@ -9,7 +9,8 @@ function monthlyFee()
   $dt = new DateTime("now", new DateTimeZone('Europe/Budapest'));
   $current_time = $dt->format('Y/m/d H:i:s');
   global $config;
-  $conn = mysqli_connect($config["DB_HOST"], $config["DB_USER"], $config["DB_PASS"], $config["DB_DATABASE"]);  if (!$conn) {
+  $conn = mysqli_connect($config["DB_HOST"], $config["DB_USER"], $config["DB_PASS"], $config["DB_DATABASE"]);
+  if (!$conn) {
     exit("Kapcsoldási hiba: " . mysqli_connect_error());
   }
   $sql = "SELECT id, id_user, number, type, currency 

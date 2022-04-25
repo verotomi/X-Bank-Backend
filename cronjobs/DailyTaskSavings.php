@@ -10,7 +10,8 @@ function handleSavings()
   $current_time = $dt->format('Y/m/d H:i:s');
   $current_date = $dt->format('Y/m/d');
   global $config;
-  $conn = mysqli_connect($config["DB_HOST"], $config["DB_USER"], $config["DB_PASS"], $config["DB_DATABASE"]);  if (!$conn) {
+  $conn = mysqli_connect($config["DB_HOST"], $config["DB_USER"], $config["DB_PASS"], $config["DB_DATABASE"]);
+  if (!$conn) {
     die("Kapcsoldási hiba: " . mysqli_connect_error());
   }
   $sql = "SELECT s.id, s.id_user, id_bank_account, id_type, amount, expire_date, s.status, reference_number, arrived_on, st.type, st.rate, st.duration, ba.currency, ba.number 
