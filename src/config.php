@@ -2,9 +2,9 @@
 
 define('VERSION_NUMBER', '1.1.4');
 
-//
-// Helyi adatbázishoz
-//
+/**
+ * Adatok a helyi adatbázis használatához
+ */
 /*return [
   'DB_HOST' => 'localhost',
   'DB_USER' => 'root',
@@ -16,9 +16,9 @@ define('VERSION_NUMBER', '1.1.4');
   'DB_PREFIX' => ''
 ];*/
 
-//
-// Interserver adatbázis távolról
-//
+/**
+ * Adatok az Interserver-en lévő adatbázishoz távoli eléréssel
+ */
 /*return [
   'DB_HOST' => 'www.verovszki.eu',
   'DB_USER' => 'bluehair_xbank',
@@ -30,9 +30,9 @@ define('VERSION_NUMBER', '1.1.4');
   'DB_PREFIX' => ''
 ];*/
 
-//
-// Interserver adatbázis lokális
-//
+/**
+ * Adatok az Interserver-en lévő adatbázishoz helyi eléréssel
+ */
 return [
   'DB_HOST' => 'localhost',
   'DB_USER' => 'bluehair_xbank',

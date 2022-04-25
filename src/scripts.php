@@ -7,6 +7,12 @@ use Models\Transactions;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
+/**
+ * Adatbázis műveletek végrehajtása előtt ellenőrzi, hogy a kérésben elküldésre kerültek-e a művelet végrehajtásához szükséges paraméterek.
+ * @param array   $params   a szükséges paramétereket tartalmazó tömb
+ * @param array   $data     a HTTP kérés törzsét tartalmazó tömb
+ */
+
 function areTheseParametersAvailable($params, $data)
 {
   $available = true;
@@ -27,10 +33,14 @@ function areTheseParametersAvailable($params, $data)
     $response['error'] = true;
     $response['message'] = 'Parameters' . substr($missingparams, 1, strlen($missingparams)) . ' missing';
     echo json_encode($response);
-    die();
+    exit();
   }
 }
 
+/**
+ * Egy bankszámlaszám aktuális egyenlegét adja vissza
+ * @param int   $id   a kérdéses banszámlaszám id-je
+ */
 function getBalance(Request $request, Response $response2, $id)
 {
   $bankaccount = BankAccounts::where('id', '=', $id)
@@ -46,6 +56,9 @@ function getBalance(Request $request, Response $response2, $id)
   return $bankaccount[0]['balance'];
 };
 
+/**
+ * HTTP kérés érkezésekor frissíti a megfelelő token 'updated_at' mezőjét
+ */
 function updateToken(Request $request, Response $response)
 {
   $dt = new DateTime("now", new DateTimeZone('Europe/Budapest'));
@@ -64,6 +77,11 @@ function updateToken(Request $request, Response $response)
   return ("OK");
 };
 
+/**
+ * Egy kimenő utaláshoz kapcsolódó banki költséget tartalmazó tranzakciót hoz létre
+ * @param array   $data     a HTTP kérés törzsét tartalmazó tömb
+ * @param float   $fee      az utalási díj összege
+ */
 function createTransferFeeTransaction(Request $request, Response $response, $data, $fee)
 {
   $dt = new DateTime("now", new DateTimeZone('Europe/Budapest'));
@@ -78,6 +96,10 @@ function createTransferFeeTransaction(Request $request, Response $response, $dat
   return ($response);
 };
 
+/**
+ * Beérkező utalás esetén létrehozza a megfelelő tranzakciót
+ * @param array   $data     a HTTP kérés törzsét tartalmazó tömb
+ */
 function createNewIncomingTransaction(Request $request, Response $response, $data)
 {
   $dt = new DateTime("now", new DateTimeZone('Europe/Budapest'));

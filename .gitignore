@@ -1,6 +1,10 @@
+/vendor
+/*.zip
 /Api_.php
 /DbOperation_.php
+/_Vero.txt
+/Hibák.txt
 /Kérdések.txt
 /Megcsinálni.txt
 /Tudnivalók.txt
-/vendor
+/Telepítés.txt

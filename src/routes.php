@@ -51,10 +51,16 @@ $app->get('/statistics', function ($request, $response, $args) {
 $app->add(TwigMiddleware::create($app, $twig));
 
 return function (App $app) {
+  /**
+   * CORS hiba kezelése
+   */
   $app->options('/{routes:.+}', function ($request, $response, $args) {
     return $response;
   });
 
+  /**
+   * CORS hiba kezelése
+   */
   $app->add(function ($request, $handler) {
     $response = $handler->handle($request);
     return $response
@@ -71,6 +77,9 @@ return function (App $app) {
       ->withStatus(401);
   });
 
+  /**
+   * Hitelesítés nélkül használható végpontok csoportja
+   */
   $app->group("", function (RouteCollectorProxy $group) {
     $group->get('/getcurrencies', function (Request $request, Response $response, $args) {
       $currencies = Currencies::all();
@@ -179,6 +188,9 @@ return function (App $app) {
     });
   });
 
+  /**
+   * Hitelesítéshez kötött végpontok csoportja
+   */
   $app->group("", function (RouteCollectorProxy $group) {
     $group->post('/getaccountbalances', function (Request $request, Response $response, $args) {
       $data = json_decode($request->getBody(), true);
