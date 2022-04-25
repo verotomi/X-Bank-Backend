@@ -1,8 +1,0 @@
-+ TWIG fájlok helye nem ott van, ahova install során telepítődnek, a leírás szerint a Slim/Views alatt lehetne elérni őket, 
-    de a Twig installálása során a fájlok nem oda kerülnek be. -> megoldás: 
-        //  ++ létrehoztam az assets/Views mappábt és beraktam ide a Twig fájlokat
-        // ++ átírtam bennük a namespace-t erre: Assets/Views
-        //  ++ a névteret be kell állítani a composer.json-ban: "Assets\\": "src/assets/"
-++ megoldás: composer dump-autoload
-
-+ 2 helyről ugyanaz az user nem tud bejelentkezni (mivel a token táblában az user_id unique volt). Megoldás: ne legyen unique
