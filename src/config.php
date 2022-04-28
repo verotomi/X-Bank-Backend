@@ -1,6 +1,6 @@
 <?php
 
-define('VERSION_NUMBER', '1.2.6');
+define('VERSION_NUMBER', '1.2.7');
 
 /**
  * Adatok a helyi adatbázis használatához

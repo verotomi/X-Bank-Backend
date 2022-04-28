@@ -192,7 +192,7 @@ return function (App $app) {
    * Hitelesítéshez kötött végpontok csoportja
    */
   $app->group("", function (RouteCollectorProxy $group) {
-    $group->post('/getaccountbalances', function (Request $request, Response $response, $args) {
+    $group->post('/getaccounts', function (Request $request, Response $response, $args) {
       $data = json_decode($request->getBody(), true);
       $bankaccounts = BankAccounts::where('id_user', '=', $data['id_user'])
         ->get();
