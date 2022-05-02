@@ -161,6 +161,7 @@ return function (App $app) {
     $group->post('/logout', function (Request $request, Response $response, $args) {
       $data = $request->getParsedBody();
       $netbankId = $data['netbank_id'];
+      $userId = $data['id_user'];
       $user = Users::where('netbank_id', $netbankId)->first();
       if ($user === NULL) {
         $kimenet = json_encode(['error' => RESPONSE_UNSUCCESFUL_LOGIN]);
@@ -169,22 +170,13 @@ return function (App $app) {
           ->withHeader('Content-type', 'application/json')
           ->withStatus(404);
       }
-      $auth = $request->getHeader('Authorization');
-      if (count($auth) !== 1) {
-        throw new Exception('Hibás Authorization header');
-      }
-      $authArr = mb_split(' ', $auth[0]);
-      if ($authArr[0] !== 'Bearer') {
-        throw new Exception("Nem támogatott autentikációs módszer");
-      }
-      $tokenStr = $authArr[1];
-      Token::where('token', $tokenStr)
+      Token::where('user_id', $userId)
         ->delete();
       $kimenet = json_encode(['Message' => "Sikeres kilépés"]);
       $response->getBody()->write($kimenet);
       return $response
         ->withHeader('Content-type', 'application/json')
-        ->withStatus(201);
+        ->withStatus(200);
     });
   });
 
@@ -493,7 +485,7 @@ return function (App $app) {
       updateToken($request, $response);
       return $response
         ->withHeader('Content-type', 'application/json')
-        ->withStatus(201);
+        ->withStatus(200);
     });
 
     $group->post('/getrecurringtransfers', function (Request $request, Response $response, $args) {
@@ -535,7 +527,7 @@ return function (App $app) {
         updateToken($request, $response);
         return $response
           ->withHeader('Content-type', 'application/json')
-          ->withStatus(200);
+          ->withStatus(201);
       } else {
         $kimenet = json_encode(['error' => RESPONSE_EXSISTING_RECURRINGTRANSFER]);
         $response->getBody()->write($kimenet);

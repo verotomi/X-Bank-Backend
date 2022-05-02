@@ -34,6 +34,8 @@ class AuthMiddleware
         $response = new \Slim\Psr7\Response;
         $kimenet = json_encode(['error' => 'Lejárt token!']);
         $response->getBody()->write($kimenet);
+        $token = Token::where('token', $tokenStr)
+          ->delete();
         return $response;
       } else {
         return $handler->handle($request);

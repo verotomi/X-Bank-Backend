@@ -1,0 +1,389 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Xbank requests",
+		"_postman_id": "4b3a4abd-8b31-9af9-8f6b-3f408f9af0bc",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get branches",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/getbranches",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"user_id\":\"1\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get atms",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/getatms",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get all currencies",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/getcurrencies",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get all foreign currencies",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/getforeigncurrencies",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Login ",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/login",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"netbankId\": \"verotomi123\",\n    \"password\": \"8p56bZrK\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/logout",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id_user\": 1,\n\"netbank_id\": \"verotomi123\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Change password",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/changepassword",
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id_user\": 1, \n    \"netbank_id\": \"verotomi123\", \n    \"old_password\": \"8p56bZrK\", \n    \"password\": \"8p56bZrK\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get savings",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/getsavings",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id_user\": \"1\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get creditcards",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/getcreditcards",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id_user\": \"1\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create one time transfer",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/createtransferonetime",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id_user\": 1,\n\"currency\": \"Forint\",\n\"id_bank_account_number\": 1,\n\"amount\": \"10000\",\n\"partner_name\": \"Hubai Réka\",\n\"partner_account_number\": \"99999999-33333333-22222222\",\n\"comment\": \"Test\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get beneficiaries",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/getbeneficiaries",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id_user\": \"1\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create beneficiary",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/createbeneficiary",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id_user\": 1,\n    \"name\": \"Poplacsek Hugó kölcsön\",\n    \"partner_name\": \"Poplacsek Hugó\",\n    \"partner_account_number\": \"55550000-11110000\",\n    \"status\": \"Active\",\n    \"created_on\": \"2022-02-05 23:15:35\"\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update beneficiary",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/updatebeneficiary",
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":20,\n\"id_user\": 1,\n\"name\":\"Teszt Elek sablon\",\n\"partner_name\":\"Teszt Elek\",\n\"partner_account_number\":\"12121212-24242424\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete beneficiary",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/deletebeneficiary",
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 273\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get statements",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/getstatements",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id_user\": \"1\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get recurring transfers",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/getrecurringtransfers",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id_user\": \"1\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update recurring transfer",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/updaterecurringtransfer",
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 9,\n    \"id_user\": 1,\n    \"id_bank_account_number\": 1,\n    \"name\": \"Átvezetés számlák között\",\n    \"currency\": \"Forint\",\n    \"amount\": \"5004.00\",\n    \"partner_name\": \"Oltai Emese\",\n    \"partner_account_number\": \"11773164-01525429-06377000\",\n    \"comment\": \"Próba\",\n    \"status\": \"Active\",\n    \"frequency\": \"Every week\",\n    \"days\": \"Thursday\"\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create recurring transfer",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/createrecurringtransfer",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id_user\": 1,\n    \"id_bank_account_number\": 1,\n    \"name\": \"Átvezetés számlák között\",\n    \"type\": \"Retail bank account\",\n    \"direction\": \"out\",\n    \"reference_number\": \"626716657\",\n    \"currency\": \"Forint\",\n    \"amount\": 5002,\n    \"partner_name\": \"Oltai Emese\",\n    \"partner_account_number\": \"11773164-01525429-06377000\",\n    \"comment\": \"Próba\",\n    \"arrived_on\": \"2022-02-15 13:30:35\",\n    \"status\": \"Active\",\n    \"last_fulfilled\": \"2021-11-21\",\n    \"frequency\": \"Every week\",\n    \"days\": \"Thursday\"\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete recurring transfer",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/deleterecurringtransfer",
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 97,\n    \"id_user\": 1\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Break deposit",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/breakdeposit",
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\"id\": 180,\n\"id_user\": 2\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get saving types",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/getsavingtypes",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Insert saving",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/insertsaving",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id_user\": 1,\n    \"id_bank_account\": 3,\n    \"id_type\": 1,\n    \"type\": \"Quarterly saving\",\n    \"expire_date\": \"2022/04/25\",\n    \"rate\": \"1.82\",\n    \"amount\": \"1000.00\",\n    \"currency\": \"Forint\",\n    \"number\": \"99999999-11111111-11111111\",\n    \"duration\": 90\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get account history",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/getaccounthistory",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"direction\": \"all\",\n\"from\": \"2022-04-02 00:00:00\",\n\"id_bank_account_number\": 1,\n\"id_user\": 1,\n\"to\": \"2022-05-02 23:59:59\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get accounts",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/getaccounts",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id_user\": 1\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update creditcard",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/updatecreditcard",
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n  {\n    \"id\": 1,\n    \"id_user\": 1,\n    \"id_bank_account\": 1,\n    \"status\": \"Active\",\n    \"limit_atm\": 100100,\n    \"limit_pos\": 100010,\n    \"limit_online\": 100100\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Root",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Statistics",
+			"request": {
+				"url": "http://localhost/15WL/X-Bank/_Backend/X-Bank/statistics",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
